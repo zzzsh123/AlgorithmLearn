@@ -49,7 +49,7 @@ public class BagTest {
         System.out.println(jis.pop());
         System.out.println(jis.isEmpty() + " isEmpty ");
         System.out.println(jis.size() + " size ");
-
+        System.out.println(jis.isFull());
     }
 
 }

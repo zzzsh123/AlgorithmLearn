@@ -8,19 +8,19 @@ public class FixedCapacityStackOfStrings {
 
     private final String [] strings;
 
-    private int index = -1;
+    private int index;
 
     public FixedCapacityStackOfStrings(int k) {
         strings = new String[k];
     }
 
     public void push(String s) {
-        if ((1 + index) == strings.length)
-        strings[++index] = s;
+        if ((++index) == strings.length)
+        strings[index++] = s;
     }
 
     public String pop() {
-        return strings[index--];
+        return strings[--index];
     }
 
     public boolean isEmpty() {
@@ -28,7 +28,7 @@ public class FixedCapacityStackOfStrings {
     }
 
     public int size()  {
-        return 1 + index;
+        return index;
     }
 
     @Override

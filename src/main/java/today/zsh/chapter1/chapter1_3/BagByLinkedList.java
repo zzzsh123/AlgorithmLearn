@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 /*
  * author: zsh
- * date: 11/23/2020 10:45 PM
- * description: 使用链表实现下压栈
+ * date: 11/24/2020 11:02 PM
+ * description: 使用链表实现bag
  **/
-public class DownTheStackByLinkedList<T> implements Iterable<T> {
+public class BagByLinkedList<T> implements Iterable<T> {
 
     private int N = 0;
     private Node first;
@@ -17,19 +17,12 @@ public class DownTheStackByLinkedList<T> implements Iterable<T> {
         Node next;
     }
 
-    public void push(T t) {
+    public void add(T t) {
         Node oldFirst = first;
         first = new Node();
         first.t = t;
         first.next = oldFirst;
         N++;
-    }
-
-    public T pop() {
-        T item = first.t;
-        first = first.next;
-        N--;
-        return item;
     }
 
     public int size() {
@@ -44,13 +37,14 @@ public class DownTheStackByLinkedList<T> implements Iterable<T> {
         return first.t;
     }
 
+
     // 实现 下压栈的迭代
     @Override
     public Iterator<T> iterator() {
-        return new DownTheStackIterator();
+        return new BagIterator();
     }
 
-    private class DownTheStackIterator implements Iterator<T> {
+    private class BagIterator implements Iterator<T> {
         private Node current=first;
         @Override
         public boolean hasNext() {

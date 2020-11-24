@@ -8,25 +8,18 @@ import java.util.Iterator;
  *
  * @param <T>
  */
-
-/***
- *
- * @param <T>
- */
 public class FixedCapacityStack<T> implements Iterable<T> {
 
     private T[] Ts;
 
     private int index;
 
-    private int in = index;
-
     public FixedCapacityStack(int k) {
         Ts = (T[]) new Object[k];
     }
 
     public void push(T s) {
-        if ((1 + index) == Ts.length) resize((int) (Ts.length * 1.5));
+        if ((++index) == Ts.length) resize((int) (Ts.length * 1.5));
         Ts[index++] =  s;
     }
 
@@ -49,6 +42,11 @@ public class FixedCapacityStack<T> implements Iterable<T> {
 
     public int size()  {
         return index;
+    }
+
+    // TODO 1.3.1 练习题
+    public boolean isFull() {
+        return index == Ts.length;
     }
 
     @Override
