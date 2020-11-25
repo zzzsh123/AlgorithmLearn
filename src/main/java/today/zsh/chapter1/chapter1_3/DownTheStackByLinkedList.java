@@ -50,6 +50,12 @@ public class DownTheStackByLinkedList<T> implements Iterable<T> {
         return new DownTheStackIterator();
     }
 
+    // TODO test 1.3.24 删除一个结点的后续结点
+    public void removeAfter (Node d) {
+        if (d.t != null || d.next != null) d.next = null;
+    }
+
+
     private class DownTheStackIterator implements Iterator<T> {
         private Node current=first;
         @Override

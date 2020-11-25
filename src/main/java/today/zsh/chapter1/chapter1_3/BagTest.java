@@ -2,6 +2,7 @@ package today.zsh.chapter1.chapter1_3;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BagTest {
 
@@ -50,6 +51,7 @@ public class BagTest {
         System.out.println(jis.isEmpty() + " isEmpty ");
         System.out.println(jis.size() + " size ");
         System.out.println(jis.isFull());
+        System.out.println("peek() ----> " + jis.peek()); // peek() test
     }
 
 }

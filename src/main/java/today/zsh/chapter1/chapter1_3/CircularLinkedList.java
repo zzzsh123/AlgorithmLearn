@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 /*
  * author: zsh
- * date: 11/24/2020 10:41 PM
- * description: 使用链表实现队列
+ * date: 11/25/2020 9:29 PM
+ * description: 环形链表
  **/
-public class QueueByLinkedList<T> implements Iterable<T> {
+public class CircularLinkedList<T> implements Iterable<T> {
 
     private Node first;
     private Node last;
@@ -26,63 +26,28 @@ public class QueueByLinkedList<T> implements Iterable<T> {
      * @param: [t]
      * @return: void
      * @description: 向表尾插入元素
-    **/
+     **/
     public void enqueue(T t) {
         Node oldLast = last;
         last = new Node();
         last.t = t;
-        last.next = null;
+        last.next = first;
         if (isEmpty()) first = last;
         else oldLast.next = last;
         N++;
     }
 
-    // TODO test 1.3.25
-    public void insertAfter (Node f, Node s) {
-        if (f != null && s != null) {
-            Node oldLast = last;
-            last = new Node();
-            last.t = f.t;
-            last.next = s;
-        }
-    }
-
-    // TODO test 1.3.26
-    public void remove (QueueByLinkedList<T> q,String s) {
-        Iterator<T> iterator = q.iterator();
-        Node current = first;
-        Node last = current;
-        while (iterator.hasNext()) {
-            T t = current.t;
-            if (s.equals(t)) {
-                last.next = current.next.next;
-            }
-            last = current;
-            current = current.next;
-        }
-    }
-
-    // TODO test 1.3.27
-    public int max (QueueByLinkedList<Integer> q) {
-        Iterator<Integer> iterator = q.iterator();
-        int temp = 0;
-        while (iterator.hasNext()) {
-            Integer next = iterator.next();
-            if (next > temp) temp = next;
-        }
-        return temp;
-    }
-
     /**
      * @author: zsh
-     * @date: 11/24/2020 10:50 PM
-     * @param: [t]
-     * @return: void
+     * @date: 11/25/2020 9:36 PM
+     * @param: []
+     * @return: T
      * @description: 删除表头元素
     **/
     public T dequeue() {
         T oldFirst = first.t;
         first = first.next;
+        last.next = first;
         if (isEmpty()) last = null;
         N--;
         return oldFirst;
@@ -95,7 +60,7 @@ public class QueueByLinkedList<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new QueueByLinkedList.ReverseArrayIterator();
+        return new ReverseArrayIterator();
     }
 
     private class ReverseArrayIterator implements Iterator<T> {
@@ -119,4 +84,5 @@ public class QueueByLinkedList<T> implements Iterable<T> {
 
         }
     }
+
 }

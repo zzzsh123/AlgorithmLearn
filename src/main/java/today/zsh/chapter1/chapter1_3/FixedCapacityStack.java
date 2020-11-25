@@ -12,6 +12,8 @@ public class FixedCapacityStack<T> implements Iterable<T> {
 
     private T[] Ts;
 
+    private T peek = null;
+
     private int index;
 
     public FixedCapacityStack(int k) {
@@ -19,6 +21,7 @@ public class FixedCapacityStack<T> implements Iterable<T> {
     }
 
     public void push(T s) {
+        peek = s;
         if ((++index) == Ts.length) resize((int) (Ts.length * 1.5));
         Ts[index++] =  s;
     }
@@ -47,6 +50,11 @@ public class FixedCapacityStack<T> implements Iterable<T> {
     // TODO 1.3.1 练习题
     public boolean isFull() {
         return index == Ts.length;
+    }
+
+    // TODO 1.3.7 练习题
+    public T peek() {
+        return peek;
     }
 
     @Override
