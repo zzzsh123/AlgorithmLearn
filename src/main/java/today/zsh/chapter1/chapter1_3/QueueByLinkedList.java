@@ -95,7 +95,7 @@ public class QueueByLinkedList<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new QueueByLinkedList.ReverseArrayIterator();
+        return new ReverseArrayIterator();
     }
 
     private class ReverseArrayIterator implements Iterator<T> {
