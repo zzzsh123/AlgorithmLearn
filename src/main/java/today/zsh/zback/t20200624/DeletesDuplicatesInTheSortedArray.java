@@ -1,6 +1,7 @@
 package today.zsh.zback.t20200624;
 
-public class 删除排序数组中的重复项 {
+// 删除排序数组中的重复项
+public class DeletesDuplicatesInTheSortedArray {
     public static int removeDuplicates(int[] nums) {
 
         int low = 0;
@@ -27,6 +28,6 @@ public class 删除排序数组中的重复项 {
 
     public static void main(String[] args) {
         int [] a = {1, 2, 3, 4, 6, 7, 7, 8, 8, 9};
-        删除排序数组中的重复项.removeDuplicates(a);
+        DeletesDuplicatesInTheSortedArray.removeDuplicates(a);
     }
 }

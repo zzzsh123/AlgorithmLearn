@@ -2,7 +2,8 @@ package today.zsh.zback.t20200624;
 
 import java.util.Arrays;
 
-public class 最接近的三数之和 {
+// 最接近的三数之和
+public class TheSumOfTheClosestThreeNumbers {
 
     public static int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
@@ -42,7 +43,7 @@ public class 最接近的三数之和 {
         a[2] = 1;
         a[3] = -4;
 
-        System.out.println(最接近的三数之和.threeSumClosest(a, 1));
+        System.out.println(TheSumOfTheClosestThreeNumbers.threeSumClosest(a, 1));
 
     }
 

@@ -1,6 +1,7 @@
 package today.zsh.zback.t20200623;
 
-public class 搜索插入位置 {
+// 搜索插入位置
+public class SearchForInsertionLocation {
 
     public static int searchInsert(int[] nums, int target) {
 
@@ -26,7 +27,7 @@ public class 搜索插入位置 {
         a[1] = 3;
         a[2] = 5;
         a[3] = 6;
-        int x = 搜索插入位置.searchInsert(a, 7);
+        int x = SearchForInsertionLocation.searchInsert(a, 7);
         System.out.println(x);
     }
 

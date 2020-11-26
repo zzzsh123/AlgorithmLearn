@@ -1,6 +1,7 @@
 package today.zsh.zback.t20200624;
 
-public class 判定是否互为字符重排 {
+// 判定是否互为字符重排
+public class DeterminesWhetherEachOtherRearrangesCharacters {
 
     public boolean CheckPermutation(String s1, String s2) {
         int s1Len = s1.length();

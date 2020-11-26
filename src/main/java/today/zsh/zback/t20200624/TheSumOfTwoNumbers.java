@@ -1,10 +1,7 @@
 package today.zsh.zback.t20200624;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-
-public class 两数之和 {
+// 两数之和
+public class TheSumOfTwoNumbers {
     public static int[] twoSum(int[] nums, int target) {
         int [] a = new int[2];
         int low = 0,high = nums.length - 1;
@@ -32,7 +29,7 @@ public class 两数之和 {
         a[2] = 11;
         a[3] = 15;
 
-        int [] s = 两数之和.twoSum(a, 9);
+        int [] s = TheSumOfTwoNumbers.twoSum(a, 9);
         System.out.println(s[0] + "   w");
         System.out.println(s[1] + "   s");
     }

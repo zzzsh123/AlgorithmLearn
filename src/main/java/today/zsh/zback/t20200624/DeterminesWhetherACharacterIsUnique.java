@@ -1,6 +1,7 @@
 package today.zsh.zback.t20200624;
 
-public class 判定字符是否唯一 {
+// 判定字符是否唯一
+public class DeterminesWhetherACharacterIsUnique {
 
     public boolean isUnique(String astr) {
         int len = astr.length();
