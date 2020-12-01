@@ -4,6 +4,10 @@ package today.zsh.chapter2.Section2_1;
  * author: zsh
  * date: 11/30/2020 4:17 PM
  * description: 希尔排序
+ *
+ * 希尔排序的时间复杂度至今无法计算出
+ * 但目前最重要的结论是: 它的运行时间达不到平方级别
+ *
  **/
 public class ShellSort extends ExampleSort {
 
@@ -13,7 +17,7 @@ public class ShellSort extends ExampleSort {
         while (h < len/3) h = 3 * h + 1;
         while (h >= 1) {
             for (int i = h;i < len;i++){
-                for (int k = i;k >= h && less(a[k], a[k-1]);k-=h) {
+                for (int k = i;k >= h && less(a[k], a[k-h]);k-=h) {
                     exCh(a, k, k-h);
                 }
             }
